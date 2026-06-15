@@ -98,7 +98,6 @@ class Registry(list):
                 return SitePermissionFormSubclass
 
         # Register an admin URL finder
-        # TODO: Revisit this
         permission_policy = model.get_permission_policy()
 
         if issubclass(model, BaseSiteSetting):
