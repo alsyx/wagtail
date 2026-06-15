@@ -16,7 +16,6 @@ from .forms import SitePermissionForm
 class SettingMenuItem(MenuItem):
     def __init__(self, model, icon="cog", classname="", **kwargs):
         self.model = model
-        # TODO: Revisit this
         self.permission_policy = self.model.get_permission_policy()
         super().__init__(
             label=capfirst(model._meta.verbose_name),
