@@ -17,6 +17,7 @@ class PermissionPolicyTestCase(PermissionPolicyTestUtils, WagtailTestUtils, Test
         self.policy = SitePermissionPolicy(TestSiteSetting)
 
         self.default_site = Site.objects.get(is_default_site=True)
+        
         self.other_site = Site.objects.create(
             hostname="other.example.com",
             port=80,
