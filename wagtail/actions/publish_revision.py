@@ -49,6 +49,7 @@ class PublishRevisionAction:
         previous_revision: Revision | None = None,
     ):
         from wagtail.permissions import model_permission_policy_class
+
         self.revision = revision
         self.object = self.revision.as_object()
         self.permission_policy = model_permission_policy_class(type(self.object))

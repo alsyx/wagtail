@@ -33,8 +33,8 @@ from wagtail.admin.ui.tables import Column, LocaleColumn, Table, TitleColumn
 from wagtail.coreutils import resolve_model_string
 from wagtail.models import CollectionMember, TranslatableMixin
 from wagtail.permission_policies import BlanketPermissionPolicy
-from wagtail.search.index import class_is_indexed
 from wagtail.permissions import model_permission_policy_class
+from wagtail.search.index import class_is_indexed
 
 
 class ModalPageFurnitureMixin(ContextMixin):

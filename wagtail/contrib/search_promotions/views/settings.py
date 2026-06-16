@@ -18,8 +18,8 @@ from wagtail.admin.ui.tables import (
 from wagtail.admin.views import generic
 from wagtail.contrib.search_promotions import forms, models
 from wagtail.contrib.search_promotions.models import Query, SearchPromotion
-from wagtail.log_actions import log
 from wagtail.contrib.search_promotions.permissions import permission_policy
+from wagtail.log_actions import log
 from wagtail.search.utils import normalise_query_string
 
 

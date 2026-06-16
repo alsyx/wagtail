@@ -4,8 +4,8 @@ from django.utils.translation import gettext as _
 
 from wagtail.coreutils import InvokeViaAttributeShortcut
 from wagtail.models import Site
-from wagtail.permissions import model_permission_policy_class
 from wagtail.permission_policies.sites import SitePermissionPolicy
+from wagtail.permissions import model_permission_policy_class
 
 from .registry import register_setting
 

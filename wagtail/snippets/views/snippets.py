@@ -14,7 +14,6 @@ from wagtail import hooks
 from wagtail.admin.checks import check_panels_in_model
 from wagtail.admin.panels import ObjectList, extract_panel_definitions_from_model_class
 from wagtail.admin.ui.components import MediaContainer
-from wagtail.permissions import model_permission_policy_class
 from wagtail.admin.ui.menus import MenuItem
 from wagtail.admin.ui.side_panels import ChecksSidePanel, PreviewSidePanel
 from wagtail.admin.ui.tables import (
@@ -44,6 +43,7 @@ from wagtail.models import (
     RevisionMixin,
     WorkflowMixin,
 )
+from wagtail.permissions import model_permission_policy_class
 from wagtail.snippets.action_menu import SnippetActionMenu
 from wagtail.snippets.models import SnippetAdminURLFinder, get_snippet_models
 from wagtail.snippets.side_panels import SnippetStatusSidePanel
