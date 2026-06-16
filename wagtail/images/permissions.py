@@ -3,7 +3,10 @@ from django.test.signals import setting_changed
 
 from wagtail.images import get_image_model
 from wagtail.images.models import Image
-from wagtail.permission_policies.collections import CollectionOwnershipPermissionPolicy
+from wagtail.permissions import (
+    collection_ownership_permission_policy_class,
+    get_permission_policy,
+)
 
 permission_policy = None
 
@@ -25,9 +28,9 @@ def set_permission_policy():
     """Sets the permission policy for the current image model."""
 
     global permission_policy
-    permission_policy = CollectionOwnershipPermissionPolicy(
-        get_image_model(), auth_model=Image, owner_field_name="uploaded_by_user"
-    )
+    permission_policy = get_permission_policy(
+        "image", default=collection_ownership_permission_policy_class
+    )(get_image_model(), auth_model=Image, owner_field_name="uploaded_by_user")
 
 
 @receiver(setting_changed)

@@ -43,7 +43,7 @@ from wagtail.models import (
     RevisionMixin,
     WorkflowMixin,
 )
-from wagtail.permissions import ModelPermissionPolicy
+from wagtail.permissions import model_permission_policy_class
 from wagtail.snippets.action_menu import SnippetActionMenu
 from wagtail.snippets.models import SnippetAdminURLFinder, get_snippet_models
 from wagtail.snippets.side_panels import SnippetStatusSidePanel
@@ -663,7 +663,7 @@ class SnippetViewSet(ModelViewSet):
 
     @property
     def permission_policy(self):
-        return ModelPermissionPolicy(self.model)
+        return model_permission_policy_class(self.model)
 
     def get_common_view_kwargs(self, **kwargs):
         return super().get_common_view_kwargs(
